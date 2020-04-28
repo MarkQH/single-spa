@@ -14,8 +14,8 @@ module.exports = {
   },
   devtool: "eval-source-map",
   devServer: {
-    open: true,
-    port: 9500,
+    // open: true,
+    port: 9502,
     hot: true,
     overlay: true,
     clientLogLevel: "error",
@@ -24,7 +24,7 @@ module.exports = {
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
-    }
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({

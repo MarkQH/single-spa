@@ -1,9 +1,6 @@
 <template>
-  <div id="root" class="main-container">
-    <nav>
-      <div>我是菜单a</div>
-    </nav>
-    <div id='apps-view'></div>
+  <div id="subapp" class="sub-container">
+    
   </div>
 </template>
 
@@ -20,7 +17,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#apps-view{
-  width: 600px;
+#subapp{
+  width: 100%;
+  height: 400px;
+  background-color: crimson;
 }
 </style>

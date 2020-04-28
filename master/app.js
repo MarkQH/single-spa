@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import App from "./app.vue";
+import App from "./App.vue";
 import router from "@src/route";
 import store from "@src/store";
 import { getMenuApi } from "@src/api/commonApi";
@@ -83,7 +83,7 @@ getMenuApi()
           entry: i.entry,
           container: '#apps-view',
           activeRule: genActiveRule(i.routerBase),
-          props: {...payload, routes: i.children, routeBase: i.routeBase, actions}
+          props: {...payload, ROUTES: i.children, routerBase: i.routerBase, actions}
         });
         if(i.defaultRegister) defaultApp = i.routerBase;
       });
@@ -106,10 +106,10 @@ getMenuApi()
         ]
       });
       // 设置默认子应用
-      if(!defaultApp) defaultApp = _res[0].routeBase;
+      if(!defaultApp) defaultApp = _res[0].routerBase;
       setDefaultMountApp(defaultApp);
       // 首个子应用加载完毕之后的回调
-      runAfterFirstMounted(app => {
+      runAfterFirstMounted((app) => {
         console.log(app);
       });
       start({prefetch: true});

@@ -2,9 +2,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
-const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const webpack = require('webpack');
 const { resolve } = require('path');
 const commonCssLoader = [
   MiniCssExtractPlugin.loader,
@@ -24,7 +22,10 @@ module.exports = {
   mode: 'production', // 生产环境会自动压缩js代码
   // externals通过CDN引入的、拒绝jQuery被打包进来
   externals: {
-    jquery: 'jQuery'
+    'vue': 'vue',
+    'vuex': 'vuex',
+    'vue-router': 'VueRouter',
+    'axios': 'axios',
   },
   module: {
     rules: [
@@ -110,14 +111,6 @@ module.exports = {
       */
       clientsClaim: true,
       skipWaiting: true,
-    }),
-    // 指定哪些库不参与打包，同时使用时的名称也得变
-    new webpack.DllReferencePlugin({
-      manifest: resolve(__dirname, '../dll/manifest.json')
-    }),
-    // 将某个文件打包输出，并在html中自动引入该文件
-    new AddAssetHtmlWebpackPlugin({
-      filepath: resolve(__dirname, '../dll/*.js')
     }),
   ],
   /*

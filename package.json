@@ -1,0 +1,11 @@
+{
+  "name": "rrt-qiankun",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "init": "node run/install.js",
+    "cinit": "node run/c-install.js",
+    "serve": "node run/start.js",
+    "build": "node run/build.js"
+  }
+}
