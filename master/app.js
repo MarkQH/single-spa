@@ -77,6 +77,7 @@ getMenuApi()
       };
       let apps = [];
       let defaultApp = null;
+      
       _res.forEach(i => {
         apps.push({
           name: i.module,

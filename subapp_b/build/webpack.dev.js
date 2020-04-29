@@ -1,8 +1,12 @@
 const webpack = require("webpack");
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const port = 9501;
 module.exports = {
   mode: 'development',
+  output: {
+    publicPath: `//localhost:${port}`
+  },
   module: {
     rules: [
       { test: /\.css$/, use: ['vue-style-loader', 'css-loader'] },
@@ -15,7 +19,7 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     // open: true,
-    port: 9502,
+    port,
     hot: true,
     overlay: true,
     clientLogLevel: "error",

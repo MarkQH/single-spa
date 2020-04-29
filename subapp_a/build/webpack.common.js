@@ -5,7 +5,6 @@ const prodConfig = require("./webpack.prod");
 const devConfig = require("./webpack.dev");
 const merge = require("webpack-merge");
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-
 const generateConfig = (isProd) => {
   return {
     stats: {
@@ -17,6 +16,10 @@ const generateConfig = (isProd) => {
     mode: isProd ? 'production' : 'development',
     entry: resolve(__dirname, '../index.js'),
     output: {
+      path: resolve(__dirname, '../dist'),
+      chunkFilename: 'js/vendors_[id]_[hash:5].js',
+      filename: 'js/[name]_entry_[hash:5].js',
+      hotUpdateChunkFilename: 'hot-update.js',
       // 把子应用打包成 umd 库格式
       library: `${packageName}-[name]`,
       libraryTarget: 'umd',

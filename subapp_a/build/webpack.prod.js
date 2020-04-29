@@ -1,5 +1,6 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const QiankunEntryPlugin = require('./plugins/qiankun-entry-plugin');
 const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -84,11 +85,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin({
-      dry: true,
-      cleanOnceBeforeBuildPatterns: ['../dist'],
-      dangerouslyAllowCleanPatternsOutsideProject: true
-    }),
+    new CleanWebpackPlugin(),
+    new QiankunEntryPlugin({target: 'main'}),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '../public/index.html'),
       filename: 'index.html',
