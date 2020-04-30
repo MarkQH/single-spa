@@ -1,32 +1,15 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-
 Vue.use(VueRouter);
 
+const Home = () => import(/* webpackChunkName: "home" */ '@src/views/home.vue');
+const Products = () => import(/* webpackChunkName: "products" */ '@src/views/products.vue');
+const Err = () => import(/* webpackChunkName: "err" */ '@src/views/err.vue');
+
 const routes = [
-  // {
-  //   path: "/",
-  //   name: "home",
-  //   component: Home
-  // },
-  // {
-  //   path: "/about",
-  //   name: "about",
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/About.vue")
-  // },
-  // // 404
-  // {
-  //   path: "/err-404",
-  //   name: "err404",
-  //   meta: {
-  //     withoutAuth: true
-  //   },
-  //   component: () => import('../views/error/404.vue')
-  // },
+  {path: "/home", name: "home", component: Home},
+  {path: "/products", name: "products", component: Products},
+  {path: "/err", name: "err", component: Err},
 ];
 
 const createRouter = () => new VueRouter({

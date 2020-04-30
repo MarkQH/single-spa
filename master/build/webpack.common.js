@@ -16,12 +16,16 @@ const generateConfig = (isProd) => {
     mode: isProd ? 'production' : 'development',
     entry: resolve(__dirname, '../app.js'),
     output: {
+      publicPath: isProd ? './' : '/',
+      chunkFilename: 'js/vendors_[id]_[hash:5].js',
       filename: 'js/[name]_[hash:5].js',
       path: resolve(__dirname, '../dist')
     },
     resolve: {
       alias: {
-        "@src": resolve(__dirname, '../src')
+        "@src": resolve(__dirname, '../src'),
+        "@components": resolve(__dirname, '../src/components'),
+        "@assets": resolve(__dirname, '../src/assets'),
       } 
     },
     module: {

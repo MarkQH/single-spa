@@ -1,17 +1,15 @@
-<template>
-  <div id="root" class="main-container">
-    <nav>
-      <div>我是菜单a</div>
-    </nav>
-    <div id='apps-view'></div>
-  </div>
+<template lang='pug'>
+  div(id="root", class="main-container")
+    Layout
 </template>
 
 <script>
+import Layout from '@components/layout.vue';
+
 export default {
   name: "rootView",
   components: {
-
+    Layout
   },
   props: {
 

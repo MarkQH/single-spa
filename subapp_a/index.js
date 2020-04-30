@@ -1,9 +1,9 @@
+import "./public-path";
 import Vue from 'vue';
 import VueRouter from "vue-router";
 import App from "./App.vue";
 import routes from "@src/route";
 import store from "@src/store";
-import "./public-path";
 import routeMatch from "./auth/route-match"; // 导入路由匹配文件路径函数
 import { getMenuApi } from "@src/api/commonApi";
 // 开发环境导入api mock数据;

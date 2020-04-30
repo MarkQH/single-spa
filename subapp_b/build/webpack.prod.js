@@ -1,5 +1,6 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const QiankunEntryPlugin = require('./plugins/qiankun-entry-plugin');
 const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -21,12 +22,12 @@ const commonCssLoader = [
 module.exports = {
   mode: 'production', // 生产环境会自动压缩js代码
   // externals通过CDN引入的、拒绝jQuery被打包进来
-  externals: {
-    'vue': 'vue',
-    'vuex': 'vuex',
-    'vue-router': 'VueRouter',
-    'axios': 'axios',
-  },
+  // externals: {
+  //   'vue': 'vue',
+  //   'vuex': 'vuex',
+  //   'vue-router': 'VueRouter',
+  //   'axios': 'axios',
+  // },
   module: {
     rules: [
       { test: /\.css$/,
@@ -84,11 +85,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin({
-      dry: true,
-      cleanOnceBeforeBuildPatterns: ['../dist'],
-      dangerouslyAllowCleanPatternsOutsideProject: true
-    }),
+    new CleanWebpackPlugin(),
+    new QiankunEntryPlugin({target: 'main'}),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '../public/index.html'),
       filename: 'index.html',

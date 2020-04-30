@@ -19,6 +19,19 @@ import {
 // 路由监听函数
 import { genActiveRule } from '@src/utils';
 
+// 注册serviceworker
+if('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(() => {
+        console.log('SW注册成功了');
+      })
+      .catch(err => {
+        console.log('SW注册失败了');
+      })
+  })
+}
+
 /**
  * 主应用下发公共资源给子应用
  */
@@ -62,7 +75,7 @@ new Vue({
   render(h) {
     return h(App);
   }
-})
+});
 
 // 获取app注册表
 getMenuApi()

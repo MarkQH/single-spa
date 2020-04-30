@@ -83,11 +83,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin({
-      dry: true,
-      cleanOnceBeforeBuildPatterns: ['../dist'],
-      dangerouslyAllowCleanPatternsOutsideProject: true
-    }),
+    
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '../public/index.html'),
       filename: 'index.html',
@@ -119,6 +115,7 @@ module.exports = {
     new AddAssetHtmlWebpackPlugin({
       filepath: resolve(__dirname, '../dll/*.js')
     }),
+    new CleanWebpackPlugin(),
   ],
   /*
     1。可以将node_modules 中代码单独打包一个chunk 最终输出

@@ -17,6 +17,7 @@ const generateConfig = (isProd) => {
     entry: resolve(__dirname, '../index.js'),
     output: {
       path: resolve(__dirname, '../dist'),
+      publicPath: isProd ? './' : '/',
       chunkFilename: 'js/vendors_[id]_[hash:5].js',
       filename: 'js/[name]_entry_[hash:5].js',
       hotUpdateChunkFilename: 'hot-update.js',

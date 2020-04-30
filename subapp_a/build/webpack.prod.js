@@ -22,12 +22,12 @@ const commonCssLoader = [
 module.exports = {
   mode: 'production', // 生产环境会自动压缩js代码
   // externals通过CDN引入的、拒绝jQuery被打包进来
-  externals: {
-    'vue': 'vue',
-    'vuex': 'vuex',
-    'vue-router': 'VueRouter',
-    'axios': 'axios',
-  },
+  // externals: {
+  //   'vue': 'vue',
+  //   'vuex': 'vuex',
+  //   'vue-router': 'VueRouter',
+  //   'axios': 'axios',
+  // },
   module: {
     rules: [
       { test: /\.css$/,

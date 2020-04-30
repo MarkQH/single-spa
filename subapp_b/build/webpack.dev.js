@@ -1,12 +1,10 @@
 const webpack = require("webpack");
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const QiankunEntryPlugin = require('./plugins/qiankun-entry-plugin');
 const port = 9501;
 module.exports = {
   mode: 'development',
-  output: {
-    publicPath: `//localhost:${port}`
-  },
   module: {
     rules: [
       { test: /\.css$/, use: ['vue-style-loader', 'css-loader'] },
@@ -21,16 +19,18 @@ module.exports = {
     // open: true,
     port,
     hot: true,
+    disableHostCheck: true,
     overlay: true,
     clientLogLevel: "error",
     // contentBase: resolve(__dirname, '../public'),
-    // watchContentBase: true,
+    watchContentBase: true,
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
   },
   plugins: [
+    new QiankunEntryPlugin({target: 'main'}),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '../public/index.html')
     }),

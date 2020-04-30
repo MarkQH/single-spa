@@ -14,7 +14,7 @@ module.exports = {
     "vuetool": ['vue', 'vuex', 'vue-router','axios'],
   },
   output: {
-    filename: '[name].dll.js',
+    filename: './[name].dll.js',
     path: resolve(__dirname, '../dll'),
     library: '[name]_[hash]', // 打包的库里面向外暴露的内容叫什么名字
   },

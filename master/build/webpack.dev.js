@@ -15,7 +15,7 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     open: true,
-    port: 9500,
+    port: 8080,
     hot: true,
     overlay: true,
     clientLogLevel: "error",
