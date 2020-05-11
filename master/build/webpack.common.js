@@ -14,7 +14,7 @@ const generateConfig = (isProd) => {
       chunkModules: false
     },
     mode: isProd ? 'production' : 'development',
-    entry: resolve(__dirname, '../app.js'),
+    entry: resolve(__dirname, '../main.js'),
     output: {
       publicPath: isProd ? './' : '/',
       chunkFilename: 'js/vendors_[id]_[hash:5].js',

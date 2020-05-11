@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const config = require('../../config/dev.config');
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
@@ -15,7 +16,7 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     open: true,
-    port: 8080,
+    port: config.ports['master_port'],
     hot: true,
     overlay: true,
     clientLogLevel: "error",

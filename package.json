@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "init": "node run/install.js",
-    "cinit": "node run/c-install.js",
-    "serve": "node run/start.js",
-    "build": "node run/build.js"
+    "install": "node run/install.js type=full",
+    "config_install": "node run/install.js type=config",
+    "start": "node run/start.js type=full",
+    "config_start": "node run/start.js type=config",
+    "build": "node run/build.js",
+    "config_build": "node run/build.js"
   }
 }

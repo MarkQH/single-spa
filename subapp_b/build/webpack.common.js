@@ -14,7 +14,7 @@ const generateConfig = (isProd) => {
       chunkModules: false
     },
     mode: isProd ? 'production' : 'development',
-    entry: resolve(__dirname, '../index.js'),
+    entry: resolve(__dirname, '../main.js'),
     output: {
       path: resolve(__dirname, '../dist'),
       publicPath: isProd ? './' : '/',

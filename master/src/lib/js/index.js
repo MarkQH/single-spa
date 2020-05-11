@@ -1,6 +1,5 @@
-import * as util from "./util"
-import * as func from "./mounted"
+import * as tools from "./tools"
 import * as storage from "./storage"
-const _exports = { ...util, ...func, ...storage }
+const _exports = { ...tools, ...storage }
 
 export default _exports;

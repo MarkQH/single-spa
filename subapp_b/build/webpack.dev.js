@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const QiankunEntryPlugin = require('./plugins/qiankun-entry-plugin');
-const port = 9501;
+const config = require('../../config/dev.config');
 module.exports = {
   mode: 'development',
   module: {
@@ -17,7 +17,7 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     // open: true,
-    port,
+    port: config.ports['subapp_b_port'],
     hot: true,
     disableHostCheck: true,
     overlay: true,

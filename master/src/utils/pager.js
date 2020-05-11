@@ -1,8 +1,3 @@
-/**
- * auth: weilan
- * time: 2020.04.01
- * des: 尝试使用rxjs解决应用间通信问题
- */
 // import store from "@/store/pagers";
 import { Subject } from "rxjs";
 // import { startWith } from "rxjs/operators";

@@ -1,23 +1,26 @@
-<!--  -->
-<template>
-<div>1234</div>
+<template lang="pug">
+  .layout
+    Header
+    #subapp-view
+    Footer
 </template>
 
 <script>
+import Header from '@components/header.vue';
+import Footer from '@components/footer.vue';
 export default {
-data() {
-return {
+  components: {
+    Header,
+    Footer
+  },
+  data() {
+    return {
 
-}
-},
-//生命周期 - 创建完成（访问当前this实例）
-created() {
+    }
+  },
+  mounted() {
 
-},
-//生命周期 - 挂载完成（访问DOM元素）
-mounted() {
-
-}
+  }
 }
 </script>
 <style lang='less' scoped>

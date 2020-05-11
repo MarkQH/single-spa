@@ -1,6 +1,6 @@
 {
-  "name": "subapp-blog",
-  "version": "1.0.0",
+  "name": "subapp-b",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
