@@ -49,7 +49,32 @@ const appConfig = [
         url: "/b/detail"
       }
     ]
-  }
+  },
+  {
+    id: "3",
+    title: "React应用",
+    module: "subapp-c",
+    defaultRegister: false,
+    entry: `//localhost:${config.ports['subapp_c_port']}`,
+    routerBase: "/c",
+    children: [
+      {
+        id: "3-1",
+        title: "C的首页",
+        url: "/c"
+      },
+      {
+        id: "3-2",
+        title: "C的信息",
+        url: "/c/info"
+      },
+      {
+        id: "3-3",
+        title: "C的详情",
+        url: "/c/detail"
+      }
+    ]
+  },
 ]
 
 export default [
